@@ -1,0 +1,14 @@
+package nmsg.defintel;
+
+message Sink {
+	required uint32		group = 1;
+	optional uint32		rule = 2;
+	optional uint32		sensor = 3;
+    optional uint32     proto = 4;
+    optional bytes      srcip = 5;
+    optional uint32     srcport = 6;
+    optional bytes      dstip = 7;
+    optional uint32     dstport = 8;
+    optional bytes		message = 9;
+    optional bytes		payload = 10;
+}
