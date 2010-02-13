@@ -1,0 +1,7 @@
+To compile from the distribution tarball:
+-----------------------------------------
+./configure && make && make install
+
+To compile from git:
+--------------------
+./bootstrap && ./configure && make dep && make && make install
