@@ -1,6 +1,18 @@
+The latest binary version for x86_64 is available from http://github.com/downloads/defintel/defintel-nmsg/nmsg_msg5_defintel.so
+
+To install the binary version, copy the DSO file into the nmsg library directory (ie /usr/local/lib/nmsg).
+
 To compile from the distribution tarball:
 -----------------------------------------
+
+If libnmsg and protobuf-c are installed in a standard location:
 ./configure && make && make install
+
+If libnmsg is installed in a non-standard location:
+./configure --prefix=/opt/nmsg --with-libnmsg=/opt/nmsg && make && make install
+
+If protobuf-c is installed in a non-standard location:
+./configure CFLAGS="-I/opt/local/include" && make && make install
 
 To compile from git:
 --------------------

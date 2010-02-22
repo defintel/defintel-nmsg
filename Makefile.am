@@ -1,4 +1,5 @@
 MSG_LIBTOOL_FLAGS = -module -avoid-version
+SUBDIRS = example
 
 SUFFIXES = .proto .pb-c.c .pb-c.h
 
