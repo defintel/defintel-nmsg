@@ -22,7 +22,11 @@ EXTRA_DIST = \
 
 module_LTLIBRARIES = nmsg_msg5_defintel.la
 
-nmsg_msg5_defintel_la_LDFLAGS = $(MSG_LIBTOOL_FLAGS)
+nmsg_msg5_defintel_la_CFLAGS = \
+	@libnmsg_cflags@
+nmsg_msg5_defintel_la_LDFLAGS = \
+	$(MSG_LIBTOOL_FLAGS) \
+	@libnmsg_ldflags@
 nmsg_msg5_defintel_la_SOURCES = nmsg_msg_defintel.c
 
 dep: sink.pb-c.c
