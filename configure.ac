@@ -1,9 +1,9 @@
 AC_PREREQ(2.60)
-AC_INIT([defintel-nmsg], [0.2])
+AC_INIT([defintel-nmsg], [0.3])
 AM_INIT_AUTOMAKE([1.10 foreign])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile example/Makefile])
 AC_CONFIG_HEADER([config.h])
 
 AC_PROG_CC

@@ -29,3 +29,4 @@ missing
 *.pb-c.c
 *.pb-c.h
 stamp-*
+sink_example

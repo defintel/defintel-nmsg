@@ -4,7 +4,15 @@ To install the binary version, copy the DSO file into the nmsg library directory
 
 To compile from the distribution tarball:
 -----------------------------------------
+
+If libnmsg and protobuf-c are installed in a standard location:
 ./configure && make && make install
+
+If libnmsg is installed in a non-standard location:
+./configure --prefix=/opt/nmsg --with-libnmsg=/opt/nmsg && make && make install
+
+If protobuf-c is installed in a non-standard location:
+./configure CFLAGS="-I/opt/local/include" && make && make install
 
 To compile from git:
 --------------------
