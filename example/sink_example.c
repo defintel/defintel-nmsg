@@ -74,20 +74,17 @@ static void
 callback(nmsg_message_t msg, void *user)
 {
 	nmsg_res res;
-	uint64_t source_ip;
+	uint8_t *source_ip;
 	size_t len;
 	int af;
-	char addr_string[64];
+	char addr_string[INET6_ADDRSTRLEN];
 
 	pthread_mutex_lock(&ctx.lock);
 	ctx.count++;
 	pthread_mutex_unlock(&ctx.lock);
 
-	/** Set the length to the size of the destination buffer */
-	len = sizeof(uint64_t);
-
 	/** Get the 'srcip' field from the message. The result is stored in source_ip and the length of the address is stored in len */
-	res = nmsg_message_get_field(msg, "srcip", 0, (uint8_t *)&source_ip, &len);
+	res = nmsg_message_get_field(msg, "srcip", 0, (void **)&source_ip, &len);
 	if(res != nmsg_res_success)
 	{
 		fprintf(stderr, "%s [%d]: nmsg_message_get_field failed to get field 'srcip'\n", __func__, __LINE__);
@@ -113,7 +110,7 @@ callback(nmsg_message_t msg, void *user)
 		}
 		else
 		{
-			if(inet_ntop(af, (void *)&source_ip, addr_string, 64) != NULL)
+			if(inet_ntop(af, (void *)source_ip, addr_string, INET6_ADDRSTRLEN) != NULL)
 			{
 				printf("srcip: %s\n", addr_string);
 			}
