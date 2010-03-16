@@ -21,14 +21,14 @@ EXTRA_DIST = \
 # NOTE: if the nmsg msgmod version (nmsg_msgX) changes, it must be
 # updated both here and in check_libnmsg.m4.
 
-module_LTLIBRARIES = nmsg_msg5_defintel.la
+module_LTLIBRARIES = nmsg_msg6_defintel.la
 
-nmsg_msg5_defintel_la_CFLAGS = \
+nmsg_msg6_defintel_la_CFLAGS = \
 	@libnmsg_cflags@
-nmsg_msg5_defintel_la_LDFLAGS = \
+nmsg_msg6_defintel_la_LDFLAGS = \
 	$(MSG_LIBTOOL_FLAGS) \
 	@libnmsg_ldflags@
-nmsg_msg5_defintel_la_SOURCES = nmsg_msg_defintel.c
+nmsg_msg6_defintel_la_SOURCES = nmsg_msg_defintel.c
 
 dep: sink.pb-c.c
 
