@@ -209,6 +209,7 @@ int main(int argc, char **argv)
 	{
 		fprintf(stderr, "failed to set input filter on input\n");
 		nmsg_input_close(&ctx.input);
+		return 1;
 	}
 
 
