@@ -45,14 +45,14 @@ AC_DEFUN([MYAC_CHECK_LIBNMSG_MSGMOD],
             #include <nmsg/msgmod_plugin.h>
             ]],
             [[
-            if (NMSG_MSGMOD_VERSION == 6)
+            if (NMSG_MSGMOD_VERSION == 7)
                 return (0);
             else
                 return (1);
             ]]
         )
         ,
-        AC_MSG_RESULT([6])
+        AC_MSG_RESULT([7])
         ,
         AC_MSG_FAILURE([nmsg msgmod version mismatch])
     )
